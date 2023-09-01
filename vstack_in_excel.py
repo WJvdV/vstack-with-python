@@ -17,9 +17,7 @@ result = []
 i = 0
 
 for sheet in sheets:
-    maxCol = wb[ sheets[i] ].max_column
-    maxRow = wb[ sheets[i] ].max_row
-    for data in wb[sheets[i]].iter_rows(min_row=2, max_col=maxCol, max_row=maxRow, values_only=True):
+    for data in wb[sheets[i]].iter_rows(min_row=2, max_col=wb[sheets[i]].max_column, max_row=wb[sheets[i]].max_row, values_only=True):
         result.append(data)
     i = i + 1
 
